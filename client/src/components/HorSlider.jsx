@@ -4,7 +4,7 @@ import { useWishList } from "../context/WishListContext";
 
 const HorSlider = ({ product, home }) => {
     // Destructure the product properties
-    const { img, title, sellPrice, mrp, discount, brand, category, rating } =
+    const { src, title, sellPrice, mrp, discount, brand, category, rating } =
         product;
 
     // Destructure wishlist context methods and state
@@ -38,7 +38,7 @@ const HorSlider = ({ product, home }) => {
                 {/* Product image */}
                 <div className="xs:h-2/3 sm:h-1/2 md:h-2/3 md:w-5/6 xs:text-sm md:text-base flex items-center ">
                     <Link to={`/product-details/${product._id}`}>
-                        <img src={img} alt={title} />
+                        <img src={src} alt={title} />
                     </Link>
                 </div>
 

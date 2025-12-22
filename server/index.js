@@ -35,4 +35,5 @@ const startServer = async () => {
     process.exit(1);
   }
 };
+app.use("/api", router);
 startServer();
