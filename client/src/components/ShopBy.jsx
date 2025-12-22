@@ -7,6 +7,13 @@ const ShopBy = ({ filter, title }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const data = [
+    { src: "/GenInfo/adidas.jpg", name: "Adidas", to: "/search/adidas" },
+    { src: "/GenInfo/nike.png", name: "Nike", to: "/search/nike" },
+    { src: "/GenInfo/skechers.jpg", name: "Skechers", to: "/search/skechers" },
+    { src: "/GenInfo/puma.jpg", name: "Puma", to: "/search/puma" },
+  ];
+
   useEffect(() => {
     let isMounted = true;
     const fetchData = async () => {
@@ -15,7 +22,7 @@ const ShopBy = ({ filter, title }) => {
           `${import.meta.env.VITE_BASE_URL}/api/filter/${filter}`
         );
         if (isMounted) {
-          setProducts(res.data);
+          setProducts(data);
           setLoading(false);
         }
       } catch (err) {
