@@ -123,26 +123,26 @@ export const searchProducts = async (req, res) => {
     }
 };
 
-//Sort products
-// export const sortProducts = async (req, res) => {
-//     try {
-//         const { category, criteria, order } = req.params;
-//         const orderby = parseInt(order);
+// Sort products
+export const sortProducts = async (req, res) => {
+    try {
+        const { category, criteria, order } = req.params;
+        const orderby = parseInt(order);
 
-//         const result = await Products.find({ category: category })
-//             .sort({ [criteria]: orderby })
+        const result = await Products.find({ category: category })
+            .sort({ [criteria]: orderby })
 
-//         if (!result) {
-//             return res.status(400).json(`Product not found.`)
-//         }
-//         res.status(200).json(result);
+        if (!result) {
+            return res.status(400).json(`Product not found.`)
+        }
+        res.status(200).json(result);
 
 
-//     } catch (error) {
-//         console.error('Error while sorting:', error.message);
-//         res.status(500).send('Internal Server Error');
-//     }
-// }
+    } catch (error) {
+        console.error('Error while sorting:', error.message);
+        res.status(500).send('Internal Server Error');
+    }
+}
 
 export const filterProducts = async (req, res) => {
     try {
